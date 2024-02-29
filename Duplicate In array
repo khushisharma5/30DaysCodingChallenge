@@ -1,0 +1,13 @@
+int findDuplicate(vector<int> &arr) 
+{
+    int ans=0;
+    //Xor-ing from 0 to N-1
+    for(int i=0; i<arr.size(); i++){
+        ans=ans^arr[i];
+    }
+    //Xor-ing from  1 to N-1 
+    for(int i=1; i<arr.size(); i++){
+        ans=ans^i;
+    }
+    return ans;     // Xor of x^x=0 and 0^x=x where x=duplicate element
+}
