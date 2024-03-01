@@ -1,5 +1,5 @@
 #include <bits/stdc++.h> 
-vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)	//Two pointers approach
 {
 	int i=0 ,j=0; 
 	vector<int >result;
