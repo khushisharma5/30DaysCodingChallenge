@@ -2,18 +2,17 @@ class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
         
-        vector<int> ans;
-        unordered_map<int, int> count;
+        vector<int> result;
+        //iteration of n i.e., from 1 to 8 with nums i.e., index value.
 
-        for(int num:nums){
-            count[num]++;
-        }
+        for(int n:nums){ 
+             n= abs(n);     // modulus of value
+        // check condition , the index value is visisted or not
+             n= abs(n);
 
-        for(int i=1;i<=nums.size(); i++){
-            if(count[i]==2){
-                ans.push_back(i);
+             if(nums[n-1]>0) nums[n-1]*= -1;   //not visited  element
+             else result.push_back(n);  // visited element
             }
-        }
-        return ans;
+        return result;
     }
 };
