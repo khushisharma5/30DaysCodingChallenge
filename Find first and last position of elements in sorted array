@@ -46,3 +46,13 @@ public:
         return{firstOcc(nums, target) , lastOcc(nums, target)};
     }
 };
+
+/* pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int k)
+{
+    pair<int,int> p;
+    p.first = firstOcc(arr, n, k);
+    p.second = lastOcc(arr,n, k);
+
+    return p;
+    
+} */ another method to print two integer values using pair<int, int> 
