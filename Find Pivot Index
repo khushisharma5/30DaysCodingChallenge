@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) {
+        int n= nums.size();
+        int sum = 0;
+
+        for(int &n : nums){   //for(int i=0; i<nums.size(); i++)
+            sum += n;
+        }
+        int cummulative_sum = 0;   // variable storing the previous elements sum
+        for(int i=0 ; i<n ; i++) {
+            int leftsum = cummulative_sum;
+            int rightsum = sum - leftsum - nums[i];
+
+            if(leftsum == rightsum){
+                return i;
+            }
+            cummulative_sum += nums[i]; // update
+        }
+        return -1;
+    }
+};
