@@ -4,11 +4,10 @@ public:
         
         int i =0;
         int ansIndex = 0;
-        int n = chars.size();
         
-        while(i < n){
+        while(i < chars.size()){
             int j =i+1;
-            while(j < n && chars[i] == chars[j]){
+            while(j < chars.size() && chars[i] == chars[j]){
                 j++;
             }
             
