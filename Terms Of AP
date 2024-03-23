@@ -1,18 +1,30 @@
-#include <bits/stdc++.h> 
 #include <vector>
 
 vector < int > termsOfAP(int x) {
-   
-   vector<int> ans;
-   int count =1;
-   
-   for(int i=0;i< x;i++){
-       int temp = (3* count +2);
-       if(temp %4 !=0){
-           ans.push_back(temp);
-       }
-       else i--;
-       count++;
-     }
-     return ans;
+    
+    // Declaring a vector to store all the elements which are to be returned.
+    vector < int > ans;
+    
+    // Declaring variable to have a look at number of elements in 'ANS' vector.
+    int got = 0;
+    
+    // Pointing to current number of series 3N + 2.
+    int curr = 5;
+    
+    // Running a loop until total number of elements in 'ANS' is not equal to 'X'.
+    while (got != x) {
+        
+        // If curr value of series is not divisible by 4 then we will append it at
+        // the end of 'ANS' vector and increment the value of 'GOT' by 1.
+        if (curr % 4 != 0) {
+            ans.push_back(curr);
+            got++;
+        }
+        
+        // Getting the next value of series by incrementing by 3.
+        curr += 3;
+    }
+    
+    // Finally we will return our 'ANS' vector.
+    return ans;
 }
