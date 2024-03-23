@@ -1,0 +1,18 @@
+#include <bits/stdc++.h> 
+#include <vector>
+
+vector < int > termsOfAP(int x) {
+   
+   vector<int> ans;
+   int count =1;
+   
+   for(int i=0;i< x;i++){
+       int temp = (3* count +2);
+       if(temp %4 !=0){
+           ans.push_back(temp);
+       }
+       else i--;
+       count++;
+     }
+     return ans;
+}
