@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        
+        vector<vector<int>> ans;
+        
+        sort(intervals.begin(),intervals.end()); //first sort the array
+        
+        vector<int> merged={intervals[0][0],intervals[0][1]}; //declared merged array to store merged intervals
+        for(int i=1;i<intervals.size();i++){
+            
+          if(intervals[i][0]>merged[1]){ //if non-overlapping then add merged intervals to the answer array and update merged interval to current interval for later iterations
+              
+            ans.push_back(merged);
+              
+            merged={intervals[i][0],intervals[i][1]};
+          }
+            else{ 
+              //if overlapping then update merged by merging the curr and merged intervals
+            merged[0]=min(merged[0],intervals[i][0]);
+            merged[1]=max(merged[1],intervals[i][1]);
+          }
+        }
+        ans.push_back(merged); //we may be merging from some interval to the last interval so we will not end up adding this to our answer as before adding we would have come out of the loop so add it in the last
+        return ans;
+    }
+};
