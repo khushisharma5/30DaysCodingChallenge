@@ -1,0 +1,22 @@
+#include <bits/stdc++.h> 
+bool sortByLastVAL(vector<int>& a, vector<int>& b){
+
+  if (a[a.size() - 2] == b[b.size() - 2]) {
+
+    return a[a.size() - 1] < b[b.size() - 1];
+  }
+    return a[a.size()-2] < b[b.size()-2];
+}
+
+
+void sortTuples(vector<vector<int>>&arr){
+
+    for (int i = 0; i < arr.size(); i++) {
+        arr[i].push_back(i);
+    }
+    sort(begin(arr), end(arr), sortByLastVAL);
+
+    for (int i = 0; i < arr.size(); i++) {
+        arr[i].pop_back();
+    }
+}
